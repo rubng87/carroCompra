@@ -36,13 +36,16 @@ Recuerda la importancia comentar con detalle el código.
 
  function miEleccion(nombreFruta, precio) {
     
-let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
-// convierto el  st
-cantidad = Number(cantidad)
-console.log(typeof cantidad);
+   let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
+// convierto el  string a numero
+   cantidad = Number(cantidad)
+//    console.log(typeof cantidad);
 
-console.log(`Compra : ${nombreFruta} -> ${precio * cantidad}`);
-   
+   console.log(`Compra : ${nombreFruta} -> ${precio * cantidad}`);
+
+}
+
+// let totalCompra = 0;
  
  
 //  document.getElementById("pomelo").onclick = function () {
@@ -58,7 +61,7 @@ console.log(`Compra : ${nombreFruta} -> ${precio * cantidad}`);
 //     miEleccion("sandia")
 //  }
 
-}
+
 
 // let frutas = {
 //     0: [pomelo, 2.50]
