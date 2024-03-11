@@ -32,19 +32,30 @@ Recuerda la importancia comentar con detalle el código.
 //  let listaTareas = []
 //  const pomelo = document.getElementById("pomelo")
 
-let totalCompra = 0; // Variable para almacenar el precio total de la compra
+// let totalCompra = 0; // Variable para almacenar el precio total de la compra
 
-function miEleccion(nombreFruta, precio) {  // Con esta función obtenemosel nombre de la fruta y su precio.
+// function miEleccion(nombreFruta, precio) {  // Con esta función obtenemosel nombre de la fruta y su precio.
     
-   let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
-   cantidad = Number(cantidad) // convierto el  string a numero
-//    console.log(typeof cantidad);
-    let precioTotal = (precio * cantidad).toFixed(2); 
-    // console.log(`Compra : ${nombreFruta} -> ${precioTotal}`);
+//    let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
+//    cantidad = Number(cantidad) // convierto el  string a numero
+// //    console.log(typeof cantidad);
+//     let precioTotal = (precio * cantidad).toFixed(2); 
+//     // console.log(`Compra : ${nombreFruta} -> ${precioTotal}`);
 
-    totalCompra += precioTotal; // Sumamos el precio total de esta fruta al precio total de la compra
-    console.log(precioTotal);
+    // Variable global para almacenar la suma de los productos
+let sumaTotal = 0;
+
+function miEleccion(nombreFruta, precio) {  
+    let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
+    cantidad = Number(cantidad); 
+
+    let precioTotal = (precio * cantidad).toFixed(2);
+    sumaTotal += parseFloat(precioTotal); // Sumamos el precio total al total acumulado
+    // Actualizamos el HTML con el total
+    document.getElementById("preuFinal").innerText = sumaTotal.toFixed(2) + "€";
 }
+
+
 
    
 
