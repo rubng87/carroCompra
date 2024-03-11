@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Compra</title>
+<style>
+.item {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.item img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.list {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.total {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.delete-button {
+  cursor: pointer;
+  color: red;
+  margin-left: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>Lista de Compra</h2>
+
+<div class="item">
+  <img src="imagen1.jpg" alt="Producto 1">
+  <p>Precio: $10</p>
+  <input type="number" id="quantity1" value="0">
+</div>
+
+<div class="item">
+  <img src="imagen2.jpg" alt="Producto 2">
+  <p>Precio: $15</p>
+  <input type="number" id="quantity2" value="0">
+</div>
+
+<div class="list">
+  <h3>Lista de la Compra</h3>
+  <ul id="shopping-list">
+  </ul>
+  <div class="total">Total: $<span id="total-price">0</span></div>
+</div>
+
+<script>
+// Función para calcular el total y actualizar la lista de compra
+function calculateTotal() {
+  let totalPrice = 0;
+  let shoppingList = document.getElementById("shopping-list");
+  shoppingList.innerHTML = "";
+
+  // Actualizar la lista de compra
+  if (parseInt(document.getElementById("quantity1").value) > 0) {
+    let quantity1 = parseInt(document.getElementById("quantity1").value);
+    let listItem1 = document.createElement("li");
+    listItem1.textContent = "Producto 1 - Cantidad: " + quantity1 + " - Total: $" + quantity1 * 10;
+    let deleteButton1 = document.createElement("span");
+    deleteButton1.textContent = " Borrar";
+    deleteButton1.className = "delete-button";
+    deleteButton1.onclick = function() {
+      document.getElementById("quantity1").value = 0;
+      calculateTotal();
+    };
+    listItem1.appendChild(deleteButton1);
+    shoppingList.appendChild(listItem1);
+    totalPrice += quantity1 * 10;
+  }
+  
+  if (parseInt(document.getElementById("quantity2").value) > 0) {
+    let quantity2 = parseInt(document.getElementById("quantity2").value);
+    let listItem2 = document.createElement("li");
+    listItem2.textContent = "Producto 2 - Cantidad: " + quantity2 + " - Total: $" + quantity2 * 15;
+    let deleteButton2 = document.createElement("span");
+    deleteButton2.textContent = " Borrar";
+    deleteButton2.className = "delete-button";
+    deleteButton2.onclick = function() {
+      document.getElementById("quantity2").value = 0;
+      calculateTotal();
+    };
+    listItem2.appendChild(deleteButton2);
+    shoppingList.appendChild(listItem2);
+    totalPrice += quantity2 * 15;
+  }
+
+  // Actualizar el precio total
+  document.getElementById("total-price").textContent = totalPrice;
+}
+
+// Escuchar cambios en las cantidades y calcular el total
+document.getElementById("quantity1").addEventListener("change", calculateTotal);
+document.getElementById("quantity2").addEventListener("change", calculateTotal);
+</script>
+
+</body>
+</html>
