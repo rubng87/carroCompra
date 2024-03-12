@@ -42,8 +42,8 @@ function miEleccion(nombreFruta, precio, unidad) {  // Con esta función obtenem
     let precioTotal = (precio * cantidad).toFixed(2); //Creamos la variable para almacenar el precio total de la compra, y añadimos un ".toFixed(2)" para que nos diga el precio con 2 decimales.
     sumaTotal += parseFloat(precioTotal); // hacemos la suma de los precios de las frutas seleccionadas
 
-    // Añadir la información de la fruta seleccionada a la lista
-    listaFrutas.push({ fruta: nombreFruta, cantidad: cantidad, precioTotal: parseFloat(precioTotal) });
+    
+    listaFrutas.push({nombreFruta, cantidad, precioTotal});// A la lista de frutas para que guarde las propiedades del nombre cantidad y el precio total para poder luego borrar dichos productos con la función borrarProducto que hacemos mas abajo fuera de esta función
 
     carrito.innerHTML += `<p><i class="fas fa-trash-alt fa-sm" style="color:red" onclick="borrarProducto(${listaFrutas.length - 1})"></i> ${nombreFruta} ${cantidad} ${unidad} x ${precio} €/${unidad} = ${precioTotal} €</p>`; // le añadimos una "p" y le asignamos todo lo que queremos que aparezca en la lista que se va acumulando de compra como, "nombreFruta, cantidad, precio, unidad y al final el resultado."
     preuFinal.innerText = sumaTotal.toFixed(2) + "€"; // Actualizamos el HTML con el total
@@ -60,7 +60,6 @@ function borrarProducto(indice) {
   listaFrutas.splice(indice, 1);// Eliminar el producto de la lista y del carrito, usamos el splice() para eliminar un elemento del array listaFrutas en la posición index y el número "1" indica que solo se eliminará un elemento en esa posición.
   carrito.removeChild(carrito.childNodes[indice]); //Elimina el elemento del carrito de la pantalla. Y el "carrito.childNodes[index]" accede al nodo hijo del carrito en la posición index, y removeChild() lo elimina.
 }
-
 
 
 
