@@ -37,66 +37,82 @@ Recuerda la importancia comentar con detalle el código.
 // function miEleccion(nombreFruta, precio) {  // Con esta función obtenemosel nombre de la fruta y su precio.
     
 //    let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
-//    cantidad = Number(cantidad) // convierto el  string a numero
+//    cantidad = Number(cantidad) 
 // //    console.log(typeof cantidad);
 //     let precioTotal = (precio * cantidad).toFixed(2); 
 //     // console.log(`Compra : ${nombreFruta} -> ${precioTotal}`);
 
+
+
+
+
     // Variable global para almacenar la suma de los productos
+// let sumaTotal = 0;
+
+//   function miEleccion(nombreFruta, precio) {  
+//     let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
+//     cantidad = Number(cantidad); // convierto el  string a numero
+    
+
+//     let precioTotal = (precio * cantidad).toFixed(2);
+//     // console.log(precioTotal);
+//     sumaTotal += parseFloat(precioTotal); // Sumamos el precio total al total acumulado
+//     console.log(sumaTotal);
+    
+//     document.getElementById("preuFinal").innerText = sumaTotal.toFixed(2) + "€"; // Actualizamos el HTML con el total
+// }
+
+
+// function listaTotalCompra() {
+//   let totalPrecio = 0;
+//   let listaCompra = documment.getElementById("preuFinal");
+//   listaCompra.innerText = ""
+
+//   if (parseInt(document.getElementById("pomelo").value) > 0) {
+//     let cantidad1 = parseInt(document.getElementById("cantidad1").value);
+//     let listaCompra1 = document.createElement("li");
+//     listaCompra1.textContent = "Producto 1 - Cantidad: " + cantidad1 + " - Total: $" + cantidad1 * 10;
+//    console.log(pomelo);
+//   }
+// }
+
+
 let sumaTotal = 0;
+let listaFrutas = []; // Lista para almacenar las cantidades y precios de las frutas seleccionadas
 
-function miEleccion(nombreFruta, precio) {  
+let carrito = document.getElementById("carrito")
+let preuFinal = document.getElementById("preuFinal")
+
+function miEleccion(nombreFruta, precio, unidad) {  
     let cantidad = prompt(`¿Qué cantidad de ${nombreFruta} deseas:`);
-    cantidad = Number(cantidad); 
-
+    cantidad = Number(cantidad); // convierto el  string a numero
+    
     let precioTotal = (precio * cantidad).toFixed(2);
     sumaTotal += parseFloat(precioTotal); // Sumamos el precio total al total acumulado
-    // Actualizamos el HTML con el total
-    document.getElementById("preuFinal").innerText = sumaTotal.toFixed(2) + "€";
+    
+    // Añadir la información de la fruta seleccionada a la lista
+    listaFrutas.push({ fruta: nombreFruta, cantidad: cantidad, precioTotal: parseFloat(precioTotal) });
+
+    carrito.innerHTML += `<p>${nombreFruta} ${cantidad} ${unidad} x ${precio} €/${unidad} = ${precioTotal}€</p>`; // Actualizamos el HTML con la lista de producto
+    preuFinal.innerText = sumaTotal.toFixed(2) + "€"; // Actualizamos el HTML con el total
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
-
-
-
-
-// // Ejemplo de uso:
-// miEleccion("Manzanas", 2.50);
-// miEleccion("Plátanos", 1.75);
-// miEleccion("Leche", 3.00);
-
-// console.log("Total de la compra:", totalCompra);
-
-
-
-
-
-
-// let totalCompra = 0;
- 
- 
-//  document.getElementById("pomelo").onclick = function () {
-//     miEleccion("pomelo")
-//  }
-//  document.getElementById("kiwi").onclick = function () {
-//     miEleccion("kiwi")
-//  }
-//  document.getElementById("limón").onclick = function () {
-//     miEleccion("limón")
-//  }
-//  document.getElementById("sandia").onclick = function () {
-//     miEleccion("sandia")
-//  }
-
-
-
-// let frutas = {
-//     0: [pomelo, 2.50]
-//     1: [kiwi, 4.20]
-//     2: [limon, 1.20]
-//     3: [sandia, 1.20]
-// }
-
 

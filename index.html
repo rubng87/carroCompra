@@ -25,51 +25,51 @@
     <main class="container">
 
         <section class="productes">
-            <div id="pomelo" onclick="miEleccion('pomelo', 2.5)">
+            <div id="pomelo" onclick="miEleccion('pomelo', 2.5, 'kg')">
                 <img loading="lazy" class="imatges" src="img/aranja.png" alt="Aranja">
                 <p>Pomelo : 2,50€/kg</p>
             </div>
-            <div id="kiwi" onclick="miEleccion('kiwi', 4.2)">
+            <div id="kiwi" onclick="miEleccion('kiwi', 4.2, 'kg')">
                 <img loading="lazy" class="imatges" src="img/kiwi.png" alt="Kiwi">
                 <p>Kiwi : 4,20€/kg</p>
             </div>
-            <div id="limón" onclick="miEleccion('limón', 1.2)">
+            <div id="limón" onclick="miEleccion('limón', 1.2, 'kg')">
                 <img loading="lazy" class="imatges" src="img/llimones.png" alt="Llimones">
                 <p>Limón : 1,20€/kg</p>
             </div>
-            <div id="piña" onclick="miEleccion('piña', 2.8)">
+            <div id="piña" onclick="miEleccion('piña', 2.8, 'ud')">
                 <img loading="lazy" class="imatges" src="img/pinya.png" alt="Pinya">
                 <p>Piña : 2.80€/ud</p>
             </div>
-            <div id="sandía" onclick="miEleccion('sandía', 1.2)" >
+            <div id="sandía" onclick="miEleccion('sandía', 1.2, 'kg')" >
                 <img loading="lazy" class="imatges" src="img/sindria.png" alt="Sindria">
                 <p>Sandía: 1,20€/kg</p>
             </div>
-            <div id="aguacate" onclick="miEleccion('aguacate', 2.5)">
+            <div id="aguacate" onclick="miEleccion('aguacate', 2.5, 'ud')">
                 <img loading="lazy" class="imatges" src="img/aguacates.jpg" alt="Aguacates">
                 <p>Aguacate : 2,50€/ud</p>
             </div>
-            <div id="fresón" onclick="miEleccion('fresón', 6.2)">
+            <div id="fresón" onclick="miEleccion('fresón', 6.2, 'kg')">
                 <img loading="lazy" class="imatges" src="img/freson.jpg" alt="Fresón">
                 <p>Fresón : 6,20€/kg</p>
             </div>
-            <div id="mandarina" onclick="miEleccion('mandarina', 1.9)">
+            <div id="mandarina" onclick="miEleccion('mandarina', 1.9, 'kg')">
                 <img loading="lazy" class="imatges" src="img/mandarina.jpg" alt="Mandarina">
                 <p>Mandarina : 1,90€/kg</p>
             </div>
-            <div id="manzana fuji" onclick="miEleccion('manzana fuji', 4.2)">
+            <div id="manzana fuji" onclick="miEleccion('manzana fuji', 4.2, 'kg')">
                 <img loading="lazy" class="imatges" src="img/manzana_fuji.jpg" alt="Manzana Fuji">
                 <p>Manzana Fuji : 4,20€/kg</p>
             </div>
-            <div id="plátano" onclick="miEleccion('plátano', 3.2)">
+            <div id="plátano" onclick="miEleccion('plátano', 3.2, 'kg')">
                 <img loading="lazy" class="imatges" src="img/platans.png" alt="Plátanos">
                 <p>Plátanos: 3,20€/kg</p>
             </div>
-            <div id="pera" onclick="miEleccion('pera', 1.8)">
+            <div id="pera" onclick="miEleccion('pera', 1.8, 'kg')">
                 <img loading="lazy" class="imatges" src="img/pera.jpg" alt="Pera">
                 <p>Pera : 1,80€/kg</p>
             </div>
-            <div id="manzana" onclick="miEleccion('manzana', 3.5)">
+            <div id="manzana" onclick="miEleccion('manzana', 3.5, 'kg')">
                 <img loading="lazy" class="imatges" src="img/manzana_golden.jpg" alt="Manzana Golden">
                 <p>Manzana Golden: 3,50€/kg</p>
             </div>
@@ -79,7 +79,7 @@
         <section>
             <!-- <h2>Total carrito:</h2> -->
             <div id="totalCompra"><span id="total"><i class="fas fa-shopping-cart fa-sm"></i>  Total Compra: <span id="preuFinal">0,00€</span></span></div>
-            <p id="carrito"></p>
+            <div id="carrito"></div>
 
         </section>
     </main>
@@ -89,5 +89,3 @@
 
 </html>
 
-
-<p id="eleccion" onclick="eleccion()"></p>
