@@ -1,6 +1,6 @@
 body{
     font-family: 'Kanit', sans-serif;
-    background: linear-gradient(90deg, aquamarine, cornsilk);
+    background: aquamarine;
 }
 
 h1 {
@@ -50,21 +50,21 @@ p {
     /* margin-bottom: 3rem; */
 }
 
-.productes div{
+.productes ol{
     border: 1px solid black;
     border-radius: 10px;
     padding: 1.4rem .8rem;
     /* height: 200px; */
-    box-shadow: 1px 1px 10px black;
+    /* box-shadow: 1px 1px 10px black; */
     background: white;
 }
 
-.productes div:hover{
+.productes ol:hover{
     background-color:azure;
     transform: scale(1.1);
 }
 
-.productes div p{
+.productes ol p{
     font-size: 1.3rem;
     margin-top: 0;
 }
